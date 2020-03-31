@@ -1,0 +1,197 @@
+\documentclass[parskip=half]{scrbook}
+
+\title{Title}
+\subtitle{Subtitle}
+\author{Firstname Lastname}
+\date{1 January 2020}
+
+\def\titlethesistype{Master Thesis}
+\def\titlesupervisor{Supervisor Name}
+
+\usepackage[utf8]{inputenc}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{theorem}{Theorem}
+\usepackage{amssymb}
+\let\emptyset\varnothing
+
+% SI Units
+\usepackage[binary-units]{siunitx}
+\sisetup{detect-all}
+
+% References
+\usepackage[numbers]{natbib}
+\bibliographystyle{plainnat}
+
+% Color
+\usepackage{xcolor}
+\definecolor{linkcolor}{cmyk}{1.0, 0.6, 0.0, 0.56}
+
+% Links
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks = true,
+	citecolor  = linkcolor,
+	linkcolor  = linkcolor,
+	urlcolor   = linkcolor,
+}
+\urlstyle{same}
+\usepackage[noabbrev]{cleveref}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% Title
+\usepackage{titlepage}
+
+% Page
+\usepackage[margin=2cm,bottom=3cm,footskip=1cm]{geometry}
+% \usepackage{showframe}
+\usepackage{chngcntr}
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+\counterwithout{equation}{chapter}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+% Font
+% \usepackage{microtype}
+\usepackage{newtxtext,newtxmath}
+\usepackage[scale=0.88]{sourcecodepro}
+\usepackage[T1]{fontenc}
+
+% Custom packages
+\usepackage{lipsum}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\chapter*{Abstract}
+
+Abstract paragraph.
+
+\mainmatter
+
+\chapter{Running Text}
+
+\section{Lorem Ipsum}
+
+\lipsum[1-2]
+
+\section{Modifiers}
+
+The most important text modifiers are \emph{emphasis} and \texttt{teletype}.
+
+\section{References}
+
+This section explains various ways of include references.
+Use footnotes for less important references.
+
+\subsection{Hyperlinks}
+
+Official university website: \url{https://www.uibk.ac.at/}
+
+\subsection{Footnotes}
+
+This text has a footnote\footnote{Footnote content goes here.} attached to it.
+
+\subsection{Citations}
+
+The book \emph{Principles of Program Analysis}~\cite{Nielson:ppa} is referenced here.
+
+\subsection{Blockquotes}
+
+Some text before a blockquote.
+
+\begin{quote}
+	\lipsum[3]
+\end{quote}
+
+Some text after a blockquote.
+
+\section{Lists}
+
+\subsection{Bullets}
+
+\begin{itemize}
+	\item One entry in the list
+	\item Another entry in the list
+	      \begin{itemize}
+		      \item Nested list element
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Enumeration}
+
+\begin{enumerate}
+	\item One entry in the list
+	\item Another entry in the list
+	      \begin{enumerate}
+		      \item Nested list element
+	      \end{enumerate}
+\end{enumerate}
+
+\subsection{Description}
+
+\begin{description}
+	\item[First] One entry in the list
+	\item[Second] Another entry in the list
+\end{description}
+
+Alternatively you may force line breaks after the descriptor.
+
+\begin{description}
+	\item[First]\hfill\\
+	      One entry in the list
+	\item[Second]\hfill\\
+	      Another entry in the list
+\end{description}
+
+\section{Math}
+
+\subsection{Inline Math and Display Math}
+
+These are your basic math environments.
+Inline math is recommended for short, concise expression, like $n = 42$ or $\mathcal{R} = \emptyset$.
+Display math should be used for more complex stuff:
+
+$$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
+
+\subsection{Equations with Numbers}
+
+This text refers to \cref{eq:some_equation}.
+
+\begin{equation}\label{eq:some_equation}
+	x^2 + y^2 = z^2
+\end{equation}
+
+\subsection{Theorem Environments}
+
+\begin{definition}
+	We simply define $x = 13$.
+\end{definition}
+
+\begin{theorem}
+	Let's say $x$ is equal to $13$.
+\end{theorem}
+
+\begin{proof}
+	Proof by definition.
+\end{proof}
+
+\subsection{Units}
+
+Leverage the \texttt{siunitx} package to properly typeset numbers and units.
+\num{12345678} and \SI{9.81}{\meter\per\second^2}.
+
+\backmatter
+\bibliography{references}
+
+\end{document}
