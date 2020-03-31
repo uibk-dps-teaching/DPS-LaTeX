@@ -86,13 +86,18 @@
 % Fix listoflistings command.
 \providecommand{\listoflistings}{\lstlistoflistings}
 
+% Glossary
+\usepackage{glossaries}
+\makeglossaries
+\include{glossary}
+
 % Title
 \usepackage{titlepage}
 
 % Page
 \usepackage{appendix}
 \usepackage[margin=2.5cm,bottom=3cm,footskip=1cm]{geometry}
-\usepackage{showframe}
+% \usepackage{showframe}
 \usepackage{chngcntr}
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
@@ -133,6 +138,11 @@ Abstract paragraph.
 \section{Modifiers}
 
 The most important text modifiers are \emph{emphasis} and \texttt{teletype}.
+
+\section{Glossary}
+
+Use the \texttt{glossaries} packages for acronyms and alike.
+Here is an example: first use \gls{dag} followed by second use \gls{dag}.
 
 \section{References}
 
@@ -365,6 +375,7 @@ Code can be written inline and taken from external files.
 
 \lipsum[1]
 
+\printglossaries
 \bibliography{references}
 
 \end{document}
