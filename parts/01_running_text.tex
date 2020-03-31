@@ -1,0 +1,120 @@
+\chapter{Running Text}
+
+\section{Lorem Ipsum}
+
+\lipsum[1-2]
+
+\section{Modifiers}
+
+The most important text modifiers are \emph{emphasis} and \texttt{teletype}.
+
+\section{Glossary}
+
+Use the \texttt{glossaries} packages for acronyms and alike.
+Here is an example: first use \gls{dag} followed by second use \gls{dag}.
+
+It is recommended to execute \texttt{\textbackslash{}glsresetall} when starting a new chapter.
+There doesn't seem to be a sane way of automating this, you have to do that manually.
+A code snippet could help.
+
+\section{References}
+
+This section explains various ways of include references.
+Use footnotes for less important references.
+
+\subsection{Hyperlinks}
+
+Official university website: \url{https://www.uibk.ac.at/}
+
+\subsection{Footnotes}
+
+This text has a footnote\footnote{Footnote content goes here.} attached to it.
+
+\subsection{Citations}
+
+The book \emph{Principles of Program Analysis}~\cite{Nielson:ppa} is referenced here.
+
+\subsection{Blockquotes}
+
+Some text before a blockquote.
+
+\begin{quote}
+	\lipsum[3]
+\end{quote}
+
+Some text after a blockquote.
+
+\section{Lists}
+
+\subsection{Bullets}
+
+\begin{itemize}
+	\item One entry in the list
+	\item Another entry in the list
+	      \begin{itemize}
+		      \item Nested list element
+	      \end{itemize}
+\end{itemize}
+
+\subsection{Enumeration}
+
+\begin{enumerate}
+	\item One entry in the list
+	\item Another entry in the list
+	      \begin{enumerate}
+		      \item Nested list element
+	      \end{enumerate}
+\end{enumerate}
+
+\subsection{Description}
+
+\begin{description}
+	\item[First] One entry in the list
+	\item[Second] Another entry in the list
+\end{description}
+
+Alternatively you may force line breaks after the descriptor.
+
+\begin{description}
+	\item[First]\hfill\\
+	      One entry in the list
+	\item[Second]\hfill\\
+	      Another entry in the list
+\end{description}
+
+\section{Math}
+
+\subsection{Inline Math and Display Math}
+
+These are your basic math environments.
+Inline math is recommended for short, concise expression, like $n = 42$ or $\mathcal{R} = \emptyset$.
+Display math should be used for more complex stuff:
+
+$$f(x) = \int_{-\infty}^\infty \hat f(\xi)\,e^{2 \pi i \xi x} \,d\xi$$
+
+\subsection{Equations with Numbers}
+
+This text refers to \cref{eq:some_equation}.
+
+\begin{equation}\label{eq:some_equation}
+	x^2 + y^2 = z^2
+\end{equation}
+
+\subsection{Theorem Environments}
+
+\begin{definition}
+	We simply define $x = 13$.
+\end{definition}
+
+\begin{theorem}
+	Let's say $x$ is equal to $13$.
+\end{theorem}
+
+\begin{proof}
+	Proof by definition.
+\end{proof}
+
+\subsection{Units}
+
+Leverage the \texttt{siunitx} package to properly typeset numbers and units.
+\num{12345678} and \SI{9.81}{\meter\per\second^2}.

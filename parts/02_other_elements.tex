@@ -1,0 +1,119 @@
+\chapter{Other Elements}
+
+This section shows you how to add other elements, like figurs or tables, to your document.
+
+\section{Tables}
+
+\subsection{Simple}
+
+\begin{center}
+\begin{tabular}{lrr}
+	\toprule
+	Description & Count & Price (single)\\
+	\midrule
+	Soda & 6 & 2.49 €\\
+	Coffee & 2 & 3.19 €\\
+	Sandwich & 1 & 5.39 €\\
+	\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Specific Width}
+
+\begin{center}
+\begin{tabularx}{0.75\textwidth}{Xrr}
+	\toprule
+	Description & Count & Price (single)\\
+	\midrule
+	Soda & 6 & 2.49 €\\
+	Coffee & 2 & 3.19 €\\
+	Sandwich & 1 & 5.39 €\\
+	\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{With Caption}
+
+\Cref{tbl:some_table} as a caption and can be referenced.
+Note that by using the \texttt{table} environment, the table is no longer inline and is repositioned automatically.
+
+\begin{table}
+	\centering
+	\begin{tabularx}{0.75\textwidth}{Xrr}
+		\toprule
+		Description & Count & Price (single)\\
+		\midrule
+		Soda & 6 & 2.49 €\\
+		Coffee & 2 & 3.19 €\\
+		Sandwich & 1 & 5.39 €\\
+		\bottomrule
+	\end{tabularx}
+	\caption{This table has a caption.}
+	\label{tbl:some_table}
+\end{table}
+
+\section{Graphics}
+
+Avoid having inline figures.
+Always give them a caption and reference them in text.
+
+\subsection{Figures}
+
+See \cref{fig:some_figure}.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.9\textwidth]{images/example.pdf}
+	\caption{An example image.}
+	\label{fig:some_figure}
+\end{figure}
+
+\subsection{TikZ}
+
+See \cref{fig:tikz_figure}.
+
+\begin{figure}
+	\centering
+	\input{images/example.tikz}
+	\caption{An example figure using TikZ.}
+	\label{fig:tikz_figure}
+\end{figure}
+
+\section{Source Code}
+
+\subsection{Inline Code}
+
+\begin{lstlisting}[language=c]
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	puts("Hello World\n");
+	return EXIT_SUCCESS;
+}
+\end{lstlisting}
+
+\subsection{External File}
+
+\lstinputlisting[language=c]{code/sample.c}
+
+\subsection{Listing}
+
+See \cref{lst:some_listing}.
+
+\lstinputlisting[language=c,float,caption={Some source code.},label={lst:some_listing}]{code/sample.c}
+
+\subsection{Minted}
+
+Minted is an external tool that provides syntax highlighting for various different languages.
+See \cref{lst:minted_example} for an example.
+Consider using it instead of the regular \texttt{listings} package.
+Mixing them is not recommended as they do not look exactly the same.
+Code can be written inline and taken from external files.
+
+\begin{listing}
+	\inputminted{haskell}{code/sample.hs}
+	\caption{Example source code, using the \texttt{minted} package.}
+	\label{lst:minted_example}
+\end{listing}
