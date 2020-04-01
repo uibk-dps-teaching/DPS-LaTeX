@@ -1,6 +1,8 @@
 \chapter{Other Elements}
 
 This section shows you how to add other elements, like figurs or tables, to your document.
+Even though the \texttt{hypcap} package is used to improve hyperlink targets, some float environemnts still need manual tweaking.
+Put \texttt{\textbackslash{}capstart} at the beginning of non-standard floating environments, like \texttt{algorithm} and \texttt{listing}.
 
 \section{Tables}
 
@@ -124,6 +126,7 @@ Mixing them is not recommended as they do not look exactly the same.
 Code can be written inline and taken from external files.
 
 \begin{listing}
+	\capstart
 	\inputminted{haskell}{code/sample.hs}
 	\caption{Example source code, using the \texttt{minted} package.}
 	\label{lst:minted_example}
