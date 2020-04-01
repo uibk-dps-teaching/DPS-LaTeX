@@ -4,9 +4,17 @@ This section shows you how to add other elements, like figurs or tables, to your
 Even though the \texttt{hypcap} package is used to improve hyperlink targets, some float environemnts still need manual tweaking.
 Put \texttt{\textbackslash{}capstart} at the beginning of non-standard floating environments, like \texttt{algorithm} and \texttt{listing}.
 
+Prefer floating environments to having inline elements.
+For floating environments, always provide a caption and a label plus reference them in text.
+
 \section{Tables}
 
-\subsection{Simple}
+Simple tables are no problem; however, crafting complex tables in \LaTeX can be quite time consuming.
+Consider using TikZ.
+
+\subsection{Simple Table}
+
+Always keep tables centered, avoid having tables side by side.
 
 \begin{center}
 \begin{tabular}{lrr}
@@ -20,7 +28,9 @@ Put \texttt{\textbackslash{}capstart} at the beginning of non-standard floating 
 \end{tabular}
 \end{center}
 
-\subsection{Specific Width}
+\subsection{Wider Table}
+
+Tables are condensed by default, consider using \texttt{tabularx} with some sensible width.
 
 \begin{center}
 \begin{tabularx}{0.75\textwidth}{Xrr}
@@ -34,10 +44,9 @@ Put \texttt{\textbackslash{}capstart} at the beginning of non-standard floating 
 \end{tabularx}
 \end{center}
 
-\subsection{With Caption}
+\subsection{Floating Table}
 
-\Cref{tbl:some_table} as a caption and can be referenced.
-Note that by using the \texttt{table} environment, the table is no longer inline and is repositioned automatically.
+\Cref{tbl:some_table} is floating. It has a caption and is referenced at the beginning of this paragraph.
 
 \begin{table}
 	\centering
@@ -55,9 +64,6 @@ Note that by using the \texttt{table} environment, the table is no longer inline
 \end{table}
 
 \section{Graphics}
-
-Avoid having inline figures.
-Always give them a caption and reference them in text.
 
 \subsection{Figures}
 
