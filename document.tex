@@ -43,6 +43,8 @@
 \usepackage[noabbrev]{cleveref}
 \crefname{lstlisting}{listing}{listings}
 \Crefname{lstlisting}{Listing}{Listings}
+\crefname{algocf}{algorithm}{algorithms}
+\Crefname{algocf}{Algorithm}{Algorithms}
 
 % Tables
 \usepackage{booktabs}
@@ -53,6 +55,11 @@
 \usetikzlibrary{arrows.meta,calc,positioning}
 \usepackage{graphicx}
 \usepackage{wrapfig}
+
+% Algorithms
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\newcommand\commentStyle[1]{\sffamily{#1}}
+\SetCommentSty{commentStyle}
 
 % Code
 \usepackage{listings}
@@ -121,6 +128,7 @@
 \tableofcontents
 \listoffigures
 \listoftables
+\listofalgorithms
 \listoflistings
 \include{parts/00_abstract}
 
