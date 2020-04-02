@@ -125,6 +125,9 @@ See \cref{alg:some_algorithm}.
 
 \subsection{Inline Code}
 
+If you need to have code inline, rather than floating, consider wrapping it with \texttt{minipage} so it is not split across pages.
+
+\begin{minipage}{0.95\textwidth}
 \begin{lstlisting}[language=c]
 #include <stdio.h>
 #include <stdlib.h>
@@ -135,10 +138,13 @@ int main(void)
 	return EXIT_SUCCESS;
 }
 \end{lstlisting}
+\end{minipage}
 
 \subsection{External File}
 
+\begin{minipage}{0.95\textwidth}
 \lstinputlisting[language=c]{code/sample.c}
+\end{minipage}
 
 \subsection{Listing}
 
