@@ -1,7 +1,4 @@
 {
-  "spellright.language": [
-    "en-US"
-  ],
   "latex-workshop.latex.outDir": "%DIR%/out",
   "latex-workshop.latex.tools": [
     {
