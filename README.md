@@ -11,3 +11,10 @@ Since [Minted](https://ctan.org/pkg/minted) is used for source code highlighting
 However, Minted can also be removed with little effort.
 
 Build and read the template for further information.
+
+## Booklet
+
+For booklet format, use the corresponding parameters for the `geometry` package in `document.tex`.
+Build the PDF as usual and convert it to booklet with the following command:
+
+    pdfbook2 -n out/document.pdf
