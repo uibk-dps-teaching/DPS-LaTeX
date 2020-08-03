@@ -12,6 +12,8 @@ However, Minted can also be removed with little effort.
 
 Build and read the template for further information.
 
+**Note:** Please do not use spaces (or tabs, or line-breaks) in filenames.
+
 ## Booklet
 
 For booklet format, use the corresponding parameters for the `geometry` package in `document.tex`.
